@@ -8,8 +8,8 @@ function App() {
   const fetcher = (url) => fetch(url, { headers }).then((res) => res.json());
   const { data, error, isLoading } = useSWR(url, fetcher);
 
-  if (isLoading) return <div>loading...</div>;
-  if (error) return <div>failed to load</div>;
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>Failed to load.</div>;
 
   return <>{data && <p>Status : {data.code}</p>}</>;
 }
